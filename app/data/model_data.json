@@ -1,0 +1,2994 @@
+{
+  "metadata": {
+    "project_name": "RidePredict",
+    "subtitle": "Cab Cancellation Prediction & Analysis System",
+    "total_records": 43431,
+    "overall_cancellation_rate": 7.21,
+    "overall_cancel_count": 3132,
+    "overall_completed_count": 40299,
+    "defaults": {
+      "from_city_mode": 15,
+      "to_city_mode": 32,
+      "from_area_mode": 393,
+      "to_area_mode": 393
+    }
+  },
+  "eda": {
+    "travel_type_stats": [
+      {
+        "id": 1,
+        "name": "Long Distance / Outstation",
+        "total": 1589,
+        "cancelled": 21,
+        "completed": 1568,
+        "rate": 1.32
+      },
+      {
+        "id": 2,
+        "name": "Point to Point",
+        "total": 34292,
+        "cancelled": 2775,
+        "completed": 31517,
+        "rate": 8.09
+      },
+      {
+        "id": 3,
+        "name": "Hourly Rental",
+        "total": 7550,
+        "cancelled": 336,
+        "completed": 7214,
+        "rate": 4.45
+      }
+    ],
+    "channel_stats": [
+      {
+        "channel": "Desktop / Call Center",
+        "total": 26283,
+        "cancelled": 940,
+        "completed": 25343,
+        "rate": 3.58
+      },
+      {
+        "channel": "Mobile Web",
+        "total": 1878,
+        "cancelled": 289,
+        "completed": 1589,
+        "rate": 15.39
+      },
+      {
+        "channel": "Online Web",
+        "total": 15270,
+        "cancelled": 1903,
+        "completed": 13367,
+        "rate": 12.46
+      }
+    ],
+    "hourly_stats": [
+      {
+        "hour": 0,
+        "total": 604,
+        "cancelled": 22,
+        "rate": 3.64
+      },
+      {
+        "hour": 1,
+        "total": 395,
+        "cancelled": 14,
+        "rate": 3.54
+      },
+      {
+        "hour": 2,
+        "total": 516,
+        "cancelled": 17,
+        "rate": 3.29
+      },
+      {
+        "hour": 3,
+        "total": 1748,
+        "cancelled": 36,
+        "rate": 2.06
+      },
+      {
+        "hour": 4,
+        "total": 1952,
+        "cancelled": 65,
+        "rate": 3.33
+      },
+      {
+        "hour": 5,
+        "total": 1806,
+        "cancelled": 108,
+        "rate": 5.98
+      },
+      {
+        "hour": 6,
+        "total": 2144,
+        "cancelled": 117,
+        "rate": 5.46
+      },
+      {
+        "hour": 7,
+        "total": 2529,
+        "cancelled": 191,
+        "rate": 7.55
+      },
+      {
+        "hour": 8,
+        "total": 3148,
+        "cancelled": 218,
+        "rate": 6.93
+      },
+      {
+        "hour": 9,
+        "total": 3035,
+        "cancelled": 162,
+        "rate": 5.34
+      },
+      {
+        "hour": 10,
+        "total": 2354,
+        "cancelled": 87,
+        "rate": 3.7
+      },
+      {
+        "hour": 11,
+        "total": 1729,
+        "cancelled": 77,
+        "rate": 4.45
+      },
+      {
+        "hour": 12,
+        "total": 1768,
+        "cancelled": 82,
+        "rate": 4.64
+      },
+      {
+        "hour": 13,
+        "total": 1515,
+        "cancelled": 59,
+        "rate": 3.89
+      },
+      {
+        "hour": 14,
+        "total": 1486,
+        "cancelled": 63,
+        "rate": 4.24
+      },
+      {
+        "hour": 15,
+        "total": 1531,
+        "cancelled": 111,
+        "rate": 7.25
+      },
+      {
+        "hour": 16,
+        "total": 1997,
+        "cancelled": 126,
+        "rate": 6.31
+      },
+      {
+        "hour": 17,
+        "total": 2686,
+        "cancelled": 287,
+        "rate": 10.69
+      },
+      {
+        "hour": 18,
+        "total": 2547,
+        "cancelled": 369,
+        "rate": 14.49
+      },
+      {
+        "hour": 19,
+        "total": 1980,
+        "cancelled": 303,
+        "rate": 15.3
+      },
+      {
+        "hour": 20,
+        "total": 1770,
+        "cancelled": 234,
+        "rate": 13.22
+      },
+      {
+        "hour": 21,
+        "total": 1493,
+        "cancelled": 149,
+        "rate": 9.98
+      },
+      {
+        "hour": 22,
+        "total": 1470,
+        "cancelled": 138,
+        "rate": 9.39
+      },
+      {
+        "hour": 23,
+        "total": 1228,
+        "cancelled": 97,
+        "rate": 7.9
+      }
+    ],
+    "day_stats": [
+      {
+        "day": "Mon",
+        "day_index": 0,
+        "total": 5964,
+        "cancelled": 465,
+        "rate": 7.8
+      },
+      {
+        "day": "Tue",
+        "day_index": 1,
+        "total": 5471,
+        "cancelled": 319,
+        "rate": 5.83
+      },
+      {
+        "day": "Wed",
+        "day_index": 2,
+        "total": 5847,
+        "cancelled": 326,
+        "rate": 5.58
+      },
+      {
+        "day": "Thu",
+        "day_index": 3,
+        "total": 6054,
+        "cancelled": 404,
+        "rate": 6.67
+      },
+      {
+        "day": "Fri",
+        "day_index": 4,
+        "total": 6911,
+        "cancelled": 578,
+        "rate": 8.36
+      },
+      {
+        "day": "Sat",
+        "day_index": 5,
+        "total": 6990,
+        "cancelled": 464,
+        "rate": 6.64
+      },
+      {
+        "day": "Sun",
+        "day_index": 6,
+        "total": 6194,
+        "cancelled": 576,
+        "rate": 9.3
+      }
+    ],
+    "lead_time_stats": [
+      {
+        "bucket": "< 2 hrs (Immediate)",
+        "total": 7792,
+        "cancelled": 773,
+        "rate": 9.92
+      },
+      {
+        "bucket": "2 - 6 hrs (Same Day)",
+        "total": 9532,
+        "cancelled": 988,
+        "rate": 10.37
+      },
+      {
+        "bucket": "6 - 12 hrs (Half Day)",
+        "total": 9676,
+        "cancelled": 672,
+        "rate": 6.95
+      },
+      {
+        "bucket": "12 - 24 hrs (1 Day Advance)",
+        "total": 8205,
+        "cancelled": 303,
+        "rate": 3.69
+      },
+      {
+        "bucket": "24 - 72 hrs (2-3 Days)",
+        "total": 4286,
+        "cancelled": 132,
+        "rate": 3.08
+      },
+      {
+        "bucket": "> 72 hrs (Long Advance)",
+        "total": 3940,
+        "cancelled": 264,
+        "rate": 6.7
+      }
+    ],
+    "hotspots": [
+      {
+        "area_id": 393,
+        "lat": 13.19956,
+        "lng": 77.70688,
+        "total": 3858,
+        "cancelled": 116,
+        "rate": 3.01,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 571,
+        "lat": 12.95185,
+        "lng": 77.69642,
+        "total": 1631,
+        "cancelled": 127,
+        "rate": 7.79,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 293,
+        "lat": 12.84948,
+        "lng": 77.66319,
+        "total": 1052,
+        "cancelled": 99,
+        "rate": 9.41,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 585,
+        "lat": 12.97677,
+        "lng": 77.5727,
+        "total": 911,
+        "cancelled": 24,
+        "rate": 2.63,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1010,
+        "lat": 12.96691,
+        "lng": 77.74935,
+        "total": 768,
+        "cancelled": 53,
+        "rate": 6.9,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 142,
+        "lat": 12.91281,
+        "lng": 77.60923,
+        "total": 727,
+        "cancelled": 43,
+        "rate": 5.91,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 83,
+        "lat": 12.92415,
+        "lng": 77.67229,
+        "total": 719,
+        "cancelled": 68,
+        "rate": 9.46,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1384,
+        "lat": 13.02853,
+        "lng": 77.54625,
+        "total": 628,
+        "cancelled": 13,
+        "rate": 2.07,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1096,
+        "lat": 12.96519,
+        "lng": 77.71932,
+        "total": 542,
+        "cancelled": 49,
+        "rate": 9.04,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 58,
+        "lat": 12.88963,
+        "lng": 77.60119,
+        "total": 466,
+        "cancelled": 37,
+        "rate": 7.94,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 269,
+        "lat": 12.9744,
+        "lng": 77.69183,
+        "total": 413,
+        "cancelled": 39,
+        "rate": 9.44,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1026,
+        "lat": 13.10482,
+        "lng": 77.57631,
+        "total": 395,
+        "cancelled": 24,
+        "rate": 6.08,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 625,
+        "lat": 12.95431,
+        "lng": 77.6553,
+        "total": 370,
+        "cancelled": 22,
+        "rate": 5.95,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1017,
+        "lat": 13.11084,
+        "lng": 77.60074,
+        "total": 363,
+        "cancelled": 12,
+        "rate": 3.31,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1330,
+        "lat": 12.95343,
+        "lng": 77.70651,
+        "total": 362,
+        "cancelled": 41,
+        "rate": 11.33,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 689,
+        "lat": 12.97672,
+        "lng": 77.64927,
+        "total": 341,
+        "cancelled": 19,
+        "rate": 5.57,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 768,
+        "lat": 12.98999,
+        "lng": 77.55332,
+        "total": 334,
+        "cancelled": 1,
+        "rate": 0.3,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 271,
+        "lat": 12.95641,
+        "lng": 77.64076,
+        "total": 333,
+        "cancelled": 28,
+        "rate": 8.41,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1056,
+        "lat": 12.9192,
+        "lng": 77.60931,
+        "total": 330,
+        "cancelled": 21,
+        "rate": 6.36,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1371,
+        "lat": 13.00042,
+        "lng": 77.67484,
+        "total": 327,
+        "cancelled": 39,
+        "rate": 11.93,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1068,
+        "lat": 13.04401,
+        "lng": 77.6068,
+        "total": 324,
+        "cancelled": 14,
+        "rate": 4.32,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 363,
+        "lat": 12.99287,
+        "lng": 77.71662,
+        "total": 308,
+        "cancelled": 29,
+        "rate": 9.42,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 396,
+        "lat": 12.92073,
+        "lng": 77.66482,
+        "total": 289,
+        "cancelled": 30,
+        "rate": 10.38,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1021,
+        "lat": 13.02853,
+        "lng": 77.54625,
+        "total": 279,
+        "cancelled": 5,
+        "rate": 1.79,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1365,
+        "lat": 12.84565,
+        "lng": 77.67793,
+        "total": 273,
+        "cancelled": 32,
+        "rate": 11.72,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 105,
+        "lat": 13.01766,
+        "lng": 77.64503,
+        "total": 271,
+        "cancelled": 12,
+        "rate": 4.43,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 410,
+        "lat": 13.05121,
+        "lng": 77.54113,
+        "total": 266,
+        "cancelled": 11,
+        "rate": 4.14,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 458,
+        "lat": 13.00037,
+        "lng": 77.72746,
+        "total": 261,
+        "cancelled": 23,
+        "rate": 8.81,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 515,
+        "lat": 12.97896,
+        "lng": 77.67345,
+        "total": 251,
+        "cancelled": 33,
+        "rate": 13.15,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 776,
+        "lat": 13.01508,
+        "lng": 77.67796,
+        "total": 249,
+        "cancelled": 19,
+        "rate": 7.63,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 572,
+        "lat": 12.91873,
+        "lng": 77.61494,
+        "total": 248,
+        "cancelled": 18,
+        "rate": 7.26,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 450,
+        "lat": 12.9334,
+        "lng": 77.62652,
+        "total": 246,
+        "cancelled": 16,
+        "rate": 6.5,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1165,
+        "lat": 12.99095,
+        "lng": 77.68711,
+        "total": 246,
+        "cancelled": 24,
+        "rate": 9.76,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 392,
+        "lat": 12.98628,
+        "lng": 77.73525,
+        "total": 242,
+        "cancelled": 33,
+        "rate": 13.64,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 1095,
+        "lat": 12.92415,
+        "lng": 77.67229,
+        "total": 241,
+        "cancelled": 29,
+        "rate": 12.03,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 1390,
+        "lat": 12.96937,
+        "lng": 77.6413,
+        "total": 235,
+        "cancelled": 23,
+        "rate": 9.79,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1084,
+        "lat": 12.89266,
+        "lng": 77.58187,
+        "total": 229,
+        "cancelled": 20,
+        "rate": 8.73,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 168,
+        "lat": 12.99313,
+        "lng": 77.59828,
+        "total": 226,
+        "cancelled": 6,
+        "rate": 2.65,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 61,
+        "lat": 12.96298,
+        "lng": 77.71229,
+        "total": 221,
+        "cancelled": 30,
+        "rate": 13.57,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 1054,
+        "lat": 12.90184,
+        "lng": 77.58159,
+        "total": 220,
+        "cancelled": 16,
+        "rate": 7.27,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 542,
+        "lat": 12.93823,
+        "lng": 77.62289,
+        "total": 216,
+        "cancelled": 19,
+        "rate": 8.8,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 353,
+        "lat": 13.03241,
+        "lng": 77.59914,
+        "total": 215,
+        "cancelled": 0,
+        "rate": 0.0,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1089,
+        "lat": 12.99517,
+        "lng": 77.73115,
+        "total": 213,
+        "cancelled": 22,
+        "rate": 10.33,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 1038,
+        "lat": 12.98127,
+        "lng": 77.63716,
+        "total": 212,
+        "cancelled": 9,
+        "rate": 4.25,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 149,
+        "lat": 12.93022,
+        "lng": 77.56039,
+        "total": 212,
+        "cancelled": 12,
+        "rate": 5.66,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 793,
+        "lat": 13.02239,
+        "lng": 77.59492,
+        "total": 211,
+        "cancelled": 3,
+        "rate": 1.42,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 767,
+        "lat": 12.9122,
+        "lng": 77.51043,
+        "total": 208,
+        "cancelled": 17,
+        "rate": 8.17,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 136,
+        "lat": 12.90796,
+        "lng": 77.62418,
+        "total": 206,
+        "cancelled": 20,
+        "rate": 9.71,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 949,
+        "lat": 12.98275,
+        "lng": 77.61582,
+        "total": 198,
+        "cancelled": 19,
+        "rate": 9.6,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 171,
+        "lat": 12.98479,
+        "lng": 77.66128,
+        "total": 198,
+        "cancelled": 25,
+        "rate": 12.63,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 1086,
+        "lat": 12.90749,
+        "lng": 77.64729,
+        "total": 197,
+        "cancelled": 18,
+        "rate": 9.14,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 448,
+        "lat": 12.92732,
+        "lng": 77.63575,
+        "total": 197,
+        "cancelled": 12,
+        "rate": 6.09,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 977,
+        "lat": 12.96993,
+        "lng": 77.53329,
+        "total": 191,
+        "cancelled": 4,
+        "rate": 2.09,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1041,
+        "lat": 12.97441,
+        "lng": 77.6648,
+        "total": 191,
+        "cancelled": 25,
+        "rate": 13.09,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 590,
+        "lat": 13.00826,
+        "lng": 77.56433,
+        "total": 189,
+        "cancelled": 11,
+        "rate": 5.82,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 1281,
+        "lat": 12.93463,
+        "lng": 77.61128,
+        "total": 188,
+        "cancelled": 13,
+        "rate": 6.91,
+        "risk_level": "Medium"
+      },
+      {
+        "area_id": 601,
+        "lat": 13.02434,
+        "lng": 77.56593,
+        "total": 185,
+        "cancelled": 4,
+        "rate": 2.16,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 89,
+        "lat": 12.96519,
+        "lng": 77.71932,
+        "total": 184,
+        "cancelled": 6,
+        "rate": 3.26,
+        "risk_level": "Low"
+      },
+      {
+        "area_id": 330,
+        "lat": 12.85883,
+        "lng": 77.58913,
+        "total": 181,
+        "cancelled": 27,
+        "rate": 14.92,
+        "risk_level": "High"
+      },
+      {
+        "area_id": 455,
+        "lat": 12.99987,
+        "lng": 77.67812,
+        "total": 181,
+        "cancelled": 14,
+        "rate": 7.73,
+        "risk_level": "Medium"
+      }
+    ]
+  },
+  "dropdown_options": {
+    "top_from_areas": [
+      {
+        "id": 393,
+        "label": "Area 393 (Low Risk)"
+      },
+      {
+        "id": 571,
+        "label": "Area 571 (Medium Risk)"
+      },
+      {
+        "id": 293,
+        "label": "Area 293 (Medium Risk)"
+      },
+      {
+        "id": 585,
+        "label": "Area 585 (Low Risk)"
+      },
+      {
+        "id": 1010,
+        "label": "Area 1010 (Medium Risk)"
+      },
+      {
+        "id": 142,
+        "label": "Area 142 (Medium Risk)"
+      },
+      {
+        "id": 83,
+        "label": "Area 83 (Medium Risk)"
+      },
+      {
+        "id": 1384,
+        "label": "Area 1384 (Low Risk)"
+      },
+      {
+        "id": 1096,
+        "label": "Area 1096 (Medium Risk)"
+      },
+      {
+        "id": 58,
+        "label": "Area 58 (Medium Risk)"
+      },
+      {
+        "id": 269,
+        "label": "Area 269 (Medium Risk)"
+      },
+      {
+        "id": 1026,
+        "label": "Area 1026 (Medium Risk)"
+      },
+      {
+        "id": 625,
+        "label": "Area 625 (Medium Risk)"
+      },
+      {
+        "id": 1017,
+        "label": "Area 1017 (Low Risk)"
+      },
+      {
+        "id": 1330,
+        "label": "Area 1330 (Medium Risk)"
+      },
+      {
+        "id": 689,
+        "label": "Area 689 (Medium Risk)"
+      },
+      {
+        "id": 768,
+        "label": "Area 768 (Low Risk)"
+      },
+      {
+        "id": 271,
+        "label": "Area 271 (Medium Risk)"
+      },
+      {
+        "id": 1056,
+        "label": "Area 1056 (Medium Risk)"
+      },
+      {
+        "id": 1371,
+        "label": "Area 1371 (Medium Risk)"
+      },
+      {
+        "id": 1068,
+        "label": "Area 1068 (Low Risk)"
+      },
+      {
+        "id": 363,
+        "label": "Area 363 (Medium Risk)"
+      },
+      {
+        "id": 396,
+        "label": "Area 396 (Medium Risk)"
+      },
+      {
+        "id": 1021,
+        "label": "Area 1021 (Low Risk)"
+      },
+      {
+        "id": 1365,
+        "label": "Area 1365 (Medium Risk)"
+      },
+      {
+        "id": 105,
+        "label": "Area 105 (Low Risk)"
+      },
+      {
+        "id": 410,
+        "label": "Area 410 (Low Risk)"
+      },
+      {
+        "id": 458,
+        "label": "Area 458 (Medium Risk)"
+      },
+      {
+        "id": 515,
+        "label": "Area 515 (Medium Risk)"
+      },
+      {
+        "id": 776,
+        "label": "Area 776 (Medium Risk)"
+      },
+      {
+        "id": 572,
+        "label": "Area 572 (Medium Risk)"
+      },
+      {
+        "id": 450,
+        "label": "Area 450 (Medium Risk)"
+      },
+      {
+        "id": 1165,
+        "label": "Area 1165 (Medium Risk)"
+      },
+      {
+        "id": 392,
+        "label": "Area 392 (Medium Risk)"
+      },
+      {
+        "id": 1095,
+        "label": "Area 1095 (Medium Risk)"
+      },
+      {
+        "id": 1390,
+        "label": "Area 1390 (Medium Risk)"
+      },
+      {
+        "id": 1084,
+        "label": "Area 1084 (Medium Risk)"
+      },
+      {
+        "id": 168,
+        "label": "Area 168 (Low Risk)"
+      },
+      {
+        "id": 61,
+        "label": "Area 61 (Medium Risk)"
+      },
+      {
+        "id": 1054,
+        "label": "Area 1054 (Medium Risk)"
+      }
+    ],
+    "top_to_areas": [
+      {
+        "id": 393,
+        "label": "Area 393"
+      },
+      {
+        "id": 585,
+        "label": "Area 585"
+      },
+      {
+        "id": 1384,
+        "label": "Area 1384"
+      },
+      {
+        "id": 571,
+        "label": "Area 571"
+      },
+      {
+        "id": 293,
+        "label": "Area 293"
+      },
+      {
+        "id": 1010,
+        "label": "Area 1010"
+      },
+      {
+        "id": 83,
+        "label": "Area 83"
+      },
+      {
+        "id": 168,
+        "label": "Area 168"
+      },
+      {
+        "id": 1371,
+        "label": "Area 1371"
+      },
+      {
+        "id": 452,
+        "label": "Area 452"
+      },
+      {
+        "id": 142,
+        "label": "Area 142"
+      },
+      {
+        "id": 1026,
+        "label": "Area 1026"
+      },
+      {
+        "id": 1068,
+        "label": "Area 1068"
+      },
+      {
+        "id": 572,
+        "label": "Area 572"
+      },
+      {
+        "id": 1021,
+        "label": "Area 1021"
+      },
+      {
+        "id": 392,
+        "label": "Area 392"
+      },
+      {
+        "id": 1192,
+        "label": "Area 1192"
+      },
+      {
+        "id": 1017,
+        "label": "Area 1017"
+      },
+      {
+        "id": 58,
+        "label": "Area 58"
+      },
+      {
+        "id": 1096,
+        "label": "Area 1096"
+      },
+      {
+        "id": 768,
+        "label": "Area 768"
+      },
+      {
+        "id": 271,
+        "label": "Area 271"
+      },
+      {
+        "id": 136,
+        "label": "Area 136"
+      },
+      {
+        "id": 1393,
+        "label": "Area 1393"
+      },
+      {
+        "id": 1330,
+        "label": "Area 1330"
+      },
+      {
+        "id": 625,
+        "label": "Area 625"
+      },
+      {
+        "id": 455,
+        "label": "Area 455"
+      },
+      {
+        "id": 269,
+        "label": "Area 269"
+      },
+      {
+        "id": 1056,
+        "label": "Area 1056"
+      },
+      {
+        "id": 767,
+        "label": "Area 767"
+      },
+      {
+        "id": 344,
+        "label": "Area 344"
+      },
+      {
+        "id": 611,
+        "label": "Area 611"
+      },
+      {
+        "id": 376,
+        "label": "Area 376"
+      },
+      {
+        "id": 25,
+        "label": "Area 25"
+      },
+      {
+        "id": 105,
+        "label": "Area 105"
+      },
+      {
+        "id": 353,
+        "label": "Area 353"
+      },
+      {
+        "id": 1365,
+        "label": "Area 1365"
+      },
+      {
+        "id": 218,
+        "label": "Area 218"
+      },
+      {
+        "id": 1041,
+        "label": "Area 1041"
+      },
+      {
+        "id": 433,
+        "label": "Area 433"
+      }
+    ],
+    "packages": [
+      {
+        "id": 1,
+        "label": "Package 1 (2 hrs / 20 km)"
+      },
+      {
+        "id": 2,
+        "label": "Package 2 (4 hrs / 40 km)"
+      },
+      {
+        "id": 3,
+        "label": "Package 3 (6 hrs / 60 km)"
+      },
+      {
+        "id": 4,
+        "label": "Package 4 (8 hrs / 80 km)"
+      },
+      {
+        "id": 5,
+        "label": "Package 5 (5 hrs / 50 km)"
+      },
+      {
+        "id": 6,
+        "label": "Package 6 (6 hrs / 60 km)"
+      },
+      {
+        "id": 7,
+        "label": "Package 7 (7 hrs / 70 km)"
+      }
+    ],
+    "area_cat_dict": {
+      "2": "Medium",
+      "6": "Low",
+      "15": "Low",
+      "16": "Low",
+      "17": "Low",
+      "22": "High",
+      "24": "Low",
+      "25": "Low",
+      "34": "High",
+      "49": "High",
+      "50": "Low",
+      "51": "Low",
+      "52": "Medium",
+      "58": "Medium",
+      "61": "Medium",
+      "62": "High",
+      "67": "High",
+      "68": "Low",
+      "72": "Low",
+      "79": "Low",
+      "83": "Medium",
+      "85": "Medium",
+      "87": "Medium",
+      "89": "Low",
+      "91": "High",
+      "92": "Medium",
+      "95": "Low",
+      "97": "Medium",
+      "104": "Low",
+      "105": "Low",
+      "112": "Low",
+      "115": "Low",
+      "117": "Medium",
+      "118": "Low",
+      "119": "Medium",
+      "120": "Medium",
+      "122": "High",
+      "128": "Medium",
+      "130": "High",
+      "133": "Low",
+      "136": "Medium",
+      "137": "Medium",
+      "138": "High",
+      "141": "Medium",
+      "142": "Medium",
+      "143": "Low",
+      "145": "Low",
+      "147": "Medium",
+      "149": "Medium",
+      "150": "Medium",
+      "151": "Medium",
+      "156": "Medium",
+      "157": "Medium",
+      "160": "High",
+      "167": "Medium",
+      "168": "Low",
+      "171": "Medium",
+      "172": "Medium",
+      "173": "Low",
+      "174": "Low",
+      "176": "High",
+      "177": "High",
+      "178": "Low",
+      "181": "Low",
+      "182": "Medium",
+      "184": "Medium",
+      "185": "Low",
+      "186": "High",
+      "187": "Low",
+      "190": "Low",
+      "192": "Low",
+      "195": "Low",
+      "197": "Medium",
+      "200": "High",
+      "201": "High",
+      "203": "Low",
+      "206": "Low",
+      "207": "Low",
+      "209": "Medium",
+      "211": "High",
+      "212": "Medium",
+      "213": "Low",
+      "214": "Medium",
+      "215": "Low",
+      "216": "High",
+      "217": "Low",
+      "218": "Medium",
+      "219": "Low",
+      "220": "Medium",
+      "221": "Low",
+      "222": "High",
+      "227": "Medium",
+      "235": "Low",
+      "238": "Medium",
+      "243": "Low",
+      "253": "Low",
+      "264": "High",
+      "269": "Medium",
+      "271": "Medium",
+      "273": "High",
+      "278": "Medium",
+      "292": "Medium",
+      "293": "Medium",
+      "296": "Low",
+      "297": "Low",
+      "300": "Medium",
+      "308": "Medium",
+      "321": "Low",
+      "326": "High",
+      "328": "Low",
+      "330": "Medium",
+      "334": "Low",
+      "339": "Medium",
+      "344": "Medium",
+      "352": "Medium",
+      "353": "Low",
+      "355": "Low",
+      "356": "High",
+      "357": "Medium",
+      "358": "Low",
+      "362": "High",
+      "363": "Medium",
+      "367": "Medium",
+      "369": "Low",
+      "373": "Medium",
+      "376": "Medium",
+      "384": "Low",
+      "391": "Low",
+      "392": "Medium",
+      "393": "Low",
+      "396": "Medium",
+      "398": "Low",
+      "404": "Low",
+      "409": "Low",
+      "410": "Low",
+      "413": "Medium",
+      "414": "Medium",
+      "417": "Medium",
+      "418": "Low",
+      "419": "Medium",
+      "420": "Low",
+      "422": "Low",
+      "424": "Low",
+      "428": "High",
+      "432": "High",
+      "433": "Low",
+      "447": "Medium",
+      "448": "Medium",
+      "450": "Medium",
+      "451": "Low",
+      "452": "Medium",
+      "455": "Medium",
+      "458": "Medium",
+      "463": "Low",
+      "466": "Low",
+      "467": "Low",
+      "471": "Medium",
+      "478": "Medium",
+      "479": "Low",
+      "483": "Low",
+      "484": "Medium",
+      "488": "Medium",
+      "492": "Medium",
+      "496": "High",
+      "499": "Medium",
+      "502": "Medium",
+      "505": "High",
+      "515": "Medium",
+      "516": "Low",
+      "520": "Low",
+      "525": "Low",
+      "529": "Medium",
+      "531": "Low",
+      "540": "Medium",
+      "541": "Medium",
+      "542": "Medium",
+      "548": "Medium",
+      "549": "Low",
+      "559": "Medium",
+      "561": "Medium",
+      "567": "Low",
+      "570": "Medium",
+      "571": "Medium",
+      "572": "Medium",
+      "575": "Medium",
+      "580": "Low",
+      "585": "Low",
+      "590": "Medium",
+      "592": "Low",
+      "595": "Low",
+      "601": "Low",
+      "603": "Low",
+      "609": "Low",
+      "611": "Medium",
+      "625": "Medium",
+      "626": "High",
+      "630": "High",
+      "637": "Low",
+      "644": "Low",
+      "647": "Low",
+      "663": "Low",
+      "667": "Low",
+      "677": "Low",
+      "679": "Low",
+      "681": "Low",
+      "683": "High",
+      "689": "Medium",
+      "691": "High",
+      "692": "Low",
+      "693": "Medium",
+      "708": "Low",
+      "722": "Low",
+      "726": "High",
+      "727": "Medium",
+      "730": "Low",
+      "731": "Medium",
+      "733": "Low",
+      "750": "Low",
+      "758": "Medium",
+      "763": "Low",
+      "766": "Low",
+      "767": "Medium",
+      "768": "Low",
+      "770": "Low",
+      "776": "Medium",
+      "784": "Low",
+      "788": "Low",
+      "789": "Medium",
+      "791": "Medium",
+      "793": "Low",
+      "798": "Medium",
+      "802": "Low",
+      "807": "Low",
+      "814": "Medium",
+      "817": "Low",
+      "822": "Low",
+      "824": "Medium",
+      "830": "Low",
+      "832": "Medium",
+      "833": "High",
+      "836": "Medium",
+      "839": "High",
+      "845": "Low",
+      "846": "Low",
+      "849": "Low",
+      "852": "Low",
+      "869": "High",
+      "871": "Low",
+      "873": "Low",
+      "877": "Low",
+      "888": "Medium",
+      "901": "Low",
+      "905": "Low",
+      "912": "High",
+      "921": "Low",
+      "934": "Medium",
+      "936": "Low",
+      "945": "Medium",
+      "949": "Medium",
+      "953": "High",
+      "963": "Low",
+      "968": "Medium",
+      "974": "Medium",
+      "977": "Low",
+      "980": "High",
+      "987": "High",
+      "988": "Low",
+      "990": "Medium",
+      "994": "Medium",
+      "995": "Medium",
+      "1004": "Low",
+      "1005": "High",
+      "1008": "Medium",
+      "1010": "Medium",
+      "1012": "Medium",
+      "1013": "Low",
+      "1014": "Low",
+      "1015": "Medium",
+      "1017": "Low",
+      "1021": "Low",
+      "1025": "Low",
+      "1026": "Medium",
+      "1032": "Medium",
+      "1033": "High",
+      "1034": "Medium",
+      "1036": "Medium",
+      "1037": "Medium",
+      "1038": "Low",
+      "1039": "Low",
+      "1040": "Medium",
+      "1041": "Medium",
+      "1042": "Low",
+      "1043": "Low",
+      "1044": "Medium",
+      "1045": "Low",
+      "1046": "Medium",
+      "1049": "Medium",
+      "1052": "Medium",
+      "1053": "Low",
+      "1054": "Medium",
+      "1056": "Medium",
+      "1057": "Low",
+      "1058": "Medium",
+      "1059": "Low",
+      "1060": "Low",
+      "1061": "Medium",
+      "1062": "Medium",
+      "1063": "Low",
+      "1064": "Low",
+      "1066": "Low",
+      "1067": "Low",
+      "1068": "Low",
+      "1069": "Medium",
+      "1070": "Medium",
+      "1071": "Medium",
+      "1072": "Low",
+      "1074": "High",
+      "1075": "Medium",
+      "1076": "High",
+      "1077": "Low",
+      "1078": "Low",
+      "1079": "Low",
+      "1080": "Low",
+      "1081": "High",
+      "1082": "Medium",
+      "1083": "Medium",
+      "1084": "Medium",
+      "1085": "Medium",
+      "1086": "Medium",
+      "1087": "Medium",
+      "1089": "Medium",
+      "1090": "Low",
+      "1091": "Low",
+      "1092": "Low",
+      "1094": "Low",
+      "1095": "Medium",
+      "1096": "Medium",
+      "1097": "Medium",
+      "1098": "Low",
+      "1099": "Medium",
+      "1100": "High",
+      "1101": "Medium",
+      "1102": "Medium",
+      "1103": "Medium",
+      "1106": "Medium",
+      "1107": "Low",
+      "1108": "Medium",
+      "1109": "High",
+      "1110": "Low",
+      "1111": "Low",
+      "1112": "High",
+      "1113": "Low",
+      "1114": "Low",
+      "1117": "Low",
+      "1118": "Low",
+      "1119": "Medium",
+      "1120": "Medium",
+      "1121": "Low",
+      "1122": "Medium",
+      "1123": "Low",
+      "1124": "Low",
+      "1125": "Low",
+      "1126": "Low",
+      "1127": "Low",
+      "1129": "Medium",
+      "1130": "High",
+      "1133": "Medium",
+      "1135": "High",
+      "1136": "Medium",
+      "1141": "High",
+      "1142": "Medium",
+      "1143": "Low",
+      "1145": "Low",
+      "1147": "Low",
+      "1148": "High",
+      "1149": "Low",
+      "1150": "Medium",
+      "1152": "Medium",
+      "1153": "Medium",
+      "1154": "Medium",
+      "1155": "Medium",
+      "1156": "Low",
+      "1157": "Low",
+      "1158": "Low",
+      "1159": "Medium",
+      "1160": "High",
+      "1161": "Low",
+      "1163": "Medium",
+      "1164": "Low",
+      "1165": "Medium",
+      "1166": "Medium",
+      "1167": "Low",
+      "1168": "Low",
+      "1169": "Medium",
+      "1170": "Low",
+      "1171": "Low",
+      "1173": "Medium",
+      "1174": "High",
+      "1175": "Low",
+      "1178": "Low",
+      "1180": "Low",
+      "1181": "Medium",
+      "1182": "Medium",
+      "1183": "Medium",
+      "1184": "Low",
+      "1185": "Low",
+      "1186": "Low",
+      "1189": "Low",
+      "1190": "Low",
+      "1191": "Low",
+      "1192": "Low",
+      "1193": "Medium",
+      "1194": "Low",
+      "1195": "Low",
+      "1196": "Low",
+      "1197": "Low",
+      "1198": "Medium",
+      "1199": "Low",
+      "1200": "Low",
+      "1201": "Low",
+      "1204": "Low",
+      "1205": "Low",
+      "1206": "Low",
+      "1207": "Medium",
+      "1208": "Low",
+      "1209": "Low",
+      "1213": "Low",
+      "1214": "High",
+      "1215": "Low",
+      "1216": "High",
+      "1217": "Low",
+      "1218": "Low",
+      "1220": "Low",
+      "1222": "Medium",
+      "1223": "Medium",
+      "1224": "Medium",
+      "1225": "Medium",
+      "1226": "High",
+      "1228": "Low",
+      "1229": "Low",
+      "1230": "Low",
+      "1232": "Medium",
+      "1234": "Low",
+      "1235": "Low",
+      "1237": "Low",
+      "1238": "Low",
+      "1239": "Medium",
+      "1240": "Low",
+      "1242": "High",
+      "1243": "Medium",
+      "1244": "High",
+      "1245": "Low",
+      "1246": "Low",
+      "1247": "Medium",
+      "1248": "Low",
+      "1249": "Low",
+      "1250": "Medium",
+      "1252": "Low",
+      "1253": "Low",
+      "1254": "Low",
+      "1255": "Low",
+      "1257": "Low",
+      "1258": "High",
+      "1259": "Medium",
+      "1260": "High",
+      "1261": "Medium",
+      "1262": "Medium",
+      "1263": "Low",
+      "1264": "High",
+      "1265": "Low",
+      "1266": "Low",
+      "1267": "High",
+      "1268": "Low",
+      "1269": "High",
+      "1270": "Low",
+      "1271": "Low",
+      "1272": "Low",
+      "1273": "High",
+      "1274": "High",
+      "1275": "Low",
+      "1276": "High",
+      "1277": "Low",
+      "1278": "High",
+      "1279": "High",
+      "1280": "Medium",
+      "1281": "Medium",
+      "1282": "High",
+      "1283": "High",
+      "1284": "Low",
+      "1285": "Medium",
+      "1286": "Medium",
+      "1287": "High",
+      "1288": "Medium",
+      "1289": "Low",
+      "1290": "Low",
+      "1291": "Low",
+      "1292": "Low",
+      "1293": "Low",
+      "1294": "Low",
+      "1295": "Medium",
+      "1296": "High",
+      "1297": "Low",
+      "1298": "Low",
+      "1299": "High",
+      "1300": "Low",
+      "1301": "Medium",
+      "1302": "Low",
+      "1303": "Medium",
+      "1304": "Low",
+      "1305": "Low",
+      "1306": "High",
+      "1307": "Medium",
+      "1308": "Low",
+      "1309": "Low",
+      "1310": "Low",
+      "1311": "Low",
+      "1312": "Medium",
+      "1313": "Medium",
+      "1314": "Low",
+      "1315": "Low",
+      "1317": "Low",
+      "1318": "Low",
+      "1320": "Medium",
+      "1321": "Low",
+      "1322": "Low",
+      "1323": "Medium",
+      "1324": "Low",
+      "1325": "Medium",
+      "1327": "High",
+      "1328": "Medium",
+      "1329": "Low",
+      "1330": "Medium",
+      "1331": "High",
+      "1332": "Low",
+      "1333": "Medium",
+      "1334": "Medium",
+      "1335": "Medium",
+      "1336": "Low",
+      "1337": "Medium",
+      "1338": "Low",
+      "1339": "Medium",
+      "1340": "Low",
+      "1341": "Medium",
+      "1342": "Low",
+      "1343": "Low",
+      "1345": "Low",
+      "1346": "Medium",
+      "1347": "High",
+      "1348": "High",
+      "1349": "High",
+      "1350": "Medium",
+      "1351": "High",
+      "1352": "Low",
+      "1353": "Medium",
+      "1354": "Medium",
+      "1355": "High",
+      "1357": "High",
+      "1358": "Low",
+      "1359": "Medium",
+      "1360": "Low",
+      "1361": "Low",
+      "1363": "Low",
+      "1364": "High",
+      "1365": "Medium",
+      "1366": "Low",
+      "1367": "Medium",
+      "1368": "Low",
+      "1369": "Low",
+      "1370": "High",
+      "1371": "Medium",
+      "1372": "High",
+      "1373": "Medium",
+      "1374": "Low",
+      "1375": "Medium",
+      "1376": "High",
+      "1377": "Low",
+      "1378": "High",
+      "1379": "High",
+      "1380": "Low",
+      "1381": "High",
+      "1382": "Low",
+      "1383": "Medium",
+      "1384": "Low",
+      "1385": "High",
+      "1386": "High",
+      "1388": "Medium",
+      "1389": "Low",
+      "1390": "Medium",
+      "1391": "Medium",
+      "1393": "Low",
+      "1394": "Medium",
+      "1395": "High",
+      "1396": "Low",
+      "1397": "Low",
+      "1398": "High",
+      "1399": "Medium",
+      "1401": "High",
+      "1403": "Low"
+    }
+  },
+  "models": {
+    "1": {
+      "travel_type_id": 1,
+      "name": "Long Distance / Outstation",
+      "feature_names": [
+        "from_area_id",
+        "from_city_id",
+        "to_city_id",
+        "online_booking",
+        "mobile_site_booking",
+        "is_VMID_12",
+        "month",
+        "day_of_week",
+        "is_weekend",
+        "booking_nature",
+        "area_cancellation_volume"
+      ],
+      "tree_json": {
+        "type": "split",
+        "feature": "online_booking",
+        "threshold": 0.5,
+        "left": {
+          "type": "split",
+          "feature": "month",
+          "threshold": 9.5,
+          "left": {
+            "type": "split",
+            "feature": "from_area_id",
+            "threshold": 13.5,
+            "left": {
+              "type": "leaf",
+              "prediction": 0,
+              "prob_cancel": 0.0,
+              "samples": 1,
+              "value": [
+                1,
+                0
+              ]
+            },
+            "right": {
+              "type": "leaf",
+              "prediction": 0,
+              "prob_cancel": 0.0,
+              "samples": 494,
+              "value": [
+                1,
+                0
+              ]
+            },
+            "samples": 495,
+            "value": [
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "day_of_week",
+            "threshold": 5.5,
+            "left": {
+              "type": "split",
+              "feature": "booking_nature",
+              "threshold": 0.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 10,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 76,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 86,
+              "value": [
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 10.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.8894,
+                "samples": 10,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 14,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 24,
+              "value": [
+                0.24119850187265918,
+                0.7588014981273408
+              ]
+            },
+            "samples": 110,
+            "value": [
+              0.6010240252067742,
+              0.39897597479322566
+            ]
+          },
+          "samples": 605,
+          "value": [
+            0.8930193262224039,
+            0.10698067377759006
+          ]
+        },
+        "right": {
+          "type": "split",
+          "feature": "month",
+          "threshold": 9.5,
+          "left": {
+            "type": "split",
+            "feature": "area_cancellation_volume",
+            "threshold": 1.5,
+            "left": {
+              "type": "leaf",
+              "prediction": 0,
+              "prob_cancel": 0.0,
+              "samples": 160,
+              "value": [
+                1,
+                0
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "to_city_id",
+              "threshold": 50.0,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 72,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.7771,
+                "samples": 87,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 159,
+              "value": [
+                0.34876245580199544,
+                0.6512375441980117
+              ]
+            },
+            "samples": 319,
+            "value": [
+              0.5211533916331837,
+              0.4788466083668191
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "booking_nature",
+            "threshold": 1.5,
+            "left": {
+              "type": "split",
+              "feature": "to_city_id",
+              "threshold": 138.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.9221,
+                "samples": 64,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 13,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 77,
+              "value": [
+                0.09454762141225549,
+                0.9054523785877453
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "day_of_week",
+              "threshold": 1.0,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 3,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 23,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 26,
+              "value": [
+                1.0,
+                0.0
+              ]
+            },
+            "samples": 103,
+            "value": [
+              0.12613821527844324,
+              0.8738617847215557
+            ]
+          },
+          "samples": 422,
+          "value": [
+            0.3030431331039941,
+            0.6969568668960081
+          ]
+        },
+        "samples": 1027,
+        "value": [
+          0.500000000000013,
+          0.5000000000000097
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "online_booking",
+          "importance": 40.92
+        },
+        {
+          "feature": "month",
+          "importance": 21.56
+        },
+        {
+          "feature": "area_cancellation_volume",
+          "importance": 13.02
+        },
+        {
+          "feature": "to_city_id",
+          "importance": 12.34
+        },
+        {
+          "feature": "day_of_week",
+          "importance": 6.79
+        },
+        {
+          "feature": "booking_nature",
+          "importance": 5.37
+        },
+        {
+          "feature": "from_area_id",
+          "importance": 0.0
+        },
+        {
+          "feature": "from_city_id",
+          "importance": 0.0
+        },
+        {
+          "feature": "mobile_site_booking",
+          "importance": 0.0
+        },
+        {
+          "feature": "is_VMID_12",
+          "importance": 0.0
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.0
+        }
+      ],
+      "models_comparison": {
+        "decision_tree": {
+          "accuracy": 86.01,
+          "precision": 6.12,
+          "recall": 60.0,
+          "f1": 11.11,
+          "roc_auc": 75.77,
+          "confusion_matrix": {
+            "tn": 292,
+            "fp": 46,
+            "fn": 2,
+            "tp": 3
+          }
+        },
+        "logistic_regression": {
+          "accuracy": 82.22,
+          "precision": 6.25,
+          "recall": 80.0,
+          "f1": 11.59,
+          "roc_auc": 93.37,
+          "confusion_matrix": {
+            "tn": 278,
+            "fp": 60,
+            "fn": 1,
+            "tp": 4
+          }
+        },
+        "random_forest": {
+          "accuracy": 87.46,
+          "precision": 4.76,
+          "recall": 40.0,
+          "f1": 8.51,
+          "roc_auc": 84.62,
+          "confusion_matrix": {
+            "tn": 298,
+            "fp": 40,
+            "fn": 3,
+            "tp": 2
+          }
+        }
+      },
+      "sample_counts": {
+        "train_samples": 1027,
+        "test_samples": 343,
+        "cancel_ratio": 1.39
+      }
+    },
+    "2": {
+      "travel_type_id": 2,
+      "name": "Point to Point",
+      "feature_names": [
+        "from_area_id",
+        "to_area_id",
+        "from_city_id",
+        "to_city_id",
+        "online_booking",
+        "mobile_site_booking",
+        "is_VMID_12",
+        "month",
+        "day_of_week",
+        "is_weekend",
+        "booking_nature",
+        "area_cancellation_volume"
+      ],
+      "tree_json": {
+        "type": "split",
+        "feature": "online_booking",
+        "threshold": 0.5,
+        "left": {
+          "type": "split",
+          "feature": "mobile_site_booking",
+          "threshold": 0.5,
+          "left": {
+            "type": "split",
+            "feature": "area_cancellation_volume",
+            "threshold": 1.5,
+            "left": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 8.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0679,
+                "samples": 3778,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.2236,
+                "samples": 1092,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 4870,
+              "value": [
+                0.8925493023088013,
+                0.10745069769120018
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "to_area_id",
+              "threshold": 409.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.2027,
+                "samples": 3611,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.4483,
+                "samples": 4296,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 7907,
+              "value": [
+                0.644805551648378,
+                0.3551944483516243
+              ]
+            },
+            "samples": 12777,
+            "value": [
+              0.723124959933127,
+              0.2768750400670027
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "booking_nature",
+            "threshold": 0.5,
+            "left": {
+              "type": "split",
+              "feature": "area_cancellation_volume",
+              "threshold": 1.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.7307,
+                "samples": 151,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.872,
+                "samples": 245,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 396,
+              "value": [
+                0.16699934255339557,
+                0.8330006574466013
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 9.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.4209,
+                "samples": 578,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.7565,
+                "samples": 199,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 777,
+              "value": [
+                0.44329345354591876,
+                0.5567065464540797
+              ]
+            },
+            "samples": 1173,
+            "value": [
+              0.30271120380184363,
+              0.697288796198158
+            ]
+          },
+          "samples": 13950,
+          "value": [
+            0.6567417466197305,
+            0.3432582533805653
+          ]
+        },
+        "right": {
+          "type": "split",
+          "feature": "booking_nature",
+          "threshold": 0.5,
+          "left": {
+            "type": "split",
+            "feature": "area_cancellation_volume",
+            "threshold": 1.5,
+            "left": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 8.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.4334,
+                "samples": 505,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.7874,
+                "samples": 174,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 679,
+              "value": [
+                0.41675397570252526,
+                0.5832460242974722
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 3.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.6648,
+                "samples": 202,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.8924,
+                "samples": 1359,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 1561,
+              "value": [
+                0.12267833740991155,
+                0.8773216625900887
+              ]
+            },
+            "samples": 2240,
+            "value": [
+              0.16915739104433822,
+              0.8308426089556616
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "month",
+            "threshold": 9.5,
+            "left": {
+              "type": "split",
+              "feature": "area_cancellation_volume",
+              "threshold": 1.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.1335,
+                "samples": 1729,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.5145,
+                "samples": 3012,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 4741,
+              "value": [
+                0.5838110663874398,
+                0.41618893361256254
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "to_area_id",
+              "threshold": 451.0,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.541,
+                "samples": 689,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.8074,
+                "samples": 639,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 1328,
+              "value": [
+                0.2887792920235648,
+                0.7112207079764369
+              ]
+            },
+            "samples": 6069,
+            "value": [
+              0.4864747877822649,
+              0.5135252122177374
+            ]
+          },
+          "samples": 8309,
+          "value": [
+            0.3451252174064605,
+            0.6548747825936856
+          ]
+        },
+        "samples": 22259,
+        "value": [
+          0.5000000000000518,
+          0.500000000000253
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "online_booking",
+          "importance": 31.23
+        },
+        {
+          "feature": "booking_nature",
+          "importance": 18.02
+        },
+        {
+          "feature": "area_cancellation_volume",
+          "importance": 17.35
+        },
+        {
+          "feature": "mobile_site_booking",
+          "importance": 15.03
+        },
+        {
+          "feature": "month",
+          "importance": 11.2
+        },
+        {
+          "feature": "to_area_id",
+          "importance": 7.17
+        },
+        {
+          "feature": "from_area_id",
+          "importance": 0.0
+        },
+        {
+          "feature": "from_city_id",
+          "importance": 0.0
+        },
+        {
+          "feature": "to_city_id",
+          "importance": 0.0
+        },
+        {
+          "feature": "is_VMID_12",
+          "importance": 0.0
+        },
+        {
+          "feature": "day_of_week",
+          "importance": 0.0
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.0
+        }
+      ],
+      "models_comparison": {
+        "decision_tree": {
+          "accuracy": 72.83,
+          "precision": 19.39,
+          "recall": 71.18,
+          "f1": 30.48,
+          "roc_auc": 79.64,
+          "confusion_matrix": {
+            "tn": 4962,
+            "fp": 1837,
+            "fn": 179,
+            "tp": 442
+          }
+        },
+        "logistic_regression": {
+          "accuracy": 72.33,
+          "precision": 19.16,
+          "recall": 71.66,
+          "f1": 30.24,
+          "roc_auc": 80.31,
+          "confusion_matrix": {
+            "tn": 4922,
+            "fp": 1877,
+            "fn": 176,
+            "tp": 445
+          }
+        },
+        "random_forest": {
+          "accuracy": 74.99,
+          "precision": 21.56,
+          "recall": 75.36,
+          "f1": 33.52,
+          "roc_auc": 83.45,
+          "confusion_matrix": {
+            "tn": 5096,
+            "fp": 1703,
+            "fn": 153,
+            "tp": 468
+          }
+        }
+      },
+      "sample_counts": {
+        "train_samples": 22259,
+        "test_samples": 7420,
+        "cancel_ratio": 8.37
+      }
+    },
+    "3": {
+      "travel_type_id": 3,
+      "name": "Hourly Rental",
+      "feature_names": [
+        "package_id",
+        "online_booking",
+        "mobile_site_booking",
+        "is_VMID_12",
+        "month",
+        "day_of_week",
+        "is_weekend",
+        "booking_nature",
+        "area_cancellation_volume"
+      ],
+      "tree_json": {
+        "type": "split",
+        "feature": "online_booking",
+        "threshold": 0.5,
+        "left": {
+          "type": "split",
+          "feature": "month",
+          "threshold": 9.5,
+          "left": {
+            "type": "split",
+            "feature": "day_of_week",
+            "threshold": 3.5,
+            "left": {
+              "type": "split",
+              "feature": "day_of_week",
+              "threshold": 0.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.274,
+                "samples": 394,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.1092,
+                "samples": 1198,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 1592,
+              "value": [
+                0.8438237236953868,
+                0.15617627630461298
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "month",
+              "threshold": 3.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.1221,
+                "samples": 453,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.4551,
+                "samples": 1143,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 1596,
+              "value": [
+                0.6123780557691921,
+                0.3876219442308086
+              ]
+            },
+            "samples": 3188,
+            "value": [
+              0.7107557986841908,
+              0.2892442013158435
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "package_id",
+            "threshold": 5.5,
+            "left": {
+              "type": "split",
+              "feature": "mobile_site_booking",
+              "threshold": 0.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.2154,
+                "samples": 385,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.8607,
+                "samples": 35,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 420,
+              "value": [
+                0.6001201900737885,
+                0.3998798099262109
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "package_id",
+              "threshold": 6.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.848,
+                "samples": 109,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 31,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 140,
+              "value": [
+                0.1960419878767392,
+                0.8039580121232583
+              ]
+            },
+            "samples": 560,
+            "value": [
+              0.4109776834557052,
+              0.5890223165442949
+            ]
+          },
+          "samples": 3748,
+          "value": [
+            0.6433989884069413,
+            0.3566010115931413
+          ]
+        },
+        "right": {
+          "type": "split",
+          "feature": "month",
+          "threshold": 4.5,
+          "left": {
+            "type": "split",
+            "feature": "booking_nature",
+            "threshold": 0.5,
+            "left": {
+              "type": "split",
+              "feature": "day_of_week",
+              "threshold": 2.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 46,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.5659,
+                "samples": 85,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 131,
+              "value": [
+                0.5470964917081693,
+                0.4529035082918272
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "area_cancellation_volume",
+              "threshold": 1.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.2612,
+                "samples": 60,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.0,
+                "samples": 130,
+                "value": [
+                  1,
+                  0
+                ]
+              },
+              "samples": 190,
+              "value": [
+                0.900594630308127,
+                0.09940536969187307
+              ]
+            },
+            "samples": 321,
+            "value": [
+              0.7156357388316161,
+              0.28436426116838326
+            ]
+          },
+          "right": {
+            "type": "split",
+            "feature": "area_cancellation_volume",
+            "threshold": 1.5,
+            "left": {
+              "type": "split",
+              "feature": "booking_nature",
+              "threshold": 0.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.6161,
+                "samples": 70,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 0,
+                "prob_cancel": 0.1763,
+                "samples": 197,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 267,
+              "value": [
+                0.6403477001086564,
+                0.3596522998913416
+              ]
+            },
+            "right": {
+              "type": "split",
+              "feature": "booking_nature",
+              "threshold": 0.5,
+              "left": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.8671,
+                "samples": 340,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "right": {
+                "type": "leaf",
+                "prediction": 1,
+                "prob_cancel": 0.6713,
+                "samples": 527,
+                "value": [
+                  0,
+                  0
+                ]
+              },
+              "samples": 867,
+              "value": [
+                0.21676308414325032,
+                0.7832369158567497
+              ]
+            },
+            "samples": 1134,
+            "value": [
+              0.2618417531444227,
+              0.7381582468555774
+            ]
+          },
+          "samples": 1455,
+          "value": [
+            0.30878053548737583,
+            0.6912194645126404
+          ]
+        },
+        "samples": 5203,
+        "value": [
+          0.49999999999997563,
+          0.5000000000000148
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "online_booking",
+          "importance": 32.75
+        },
+        {
+          "feature": "month",
+          "importance": 25.91
+        },
+        {
+          "feature": "day_of_week",
+          "importance": 9.59
+        },
+        {
+          "feature": "package_id",
+          "importance": 8.78
+        },
+        {
+          "feature": "area_cancellation_volume",
+          "importance": 8.24
+        },
+        {
+          "feature": "booking_nature",
+          "importance": 7.8
+        },
+        {
+          "feature": "mobile_site_booking",
+          "importance": 6.94
+        },
+        {
+          "feature": "is_VMID_12",
+          "importance": 0.0
+        },
+        {
+          "feature": "is_weekend",
+          "importance": 0.0
+        }
+      ],
+      "models_comparison": {
+        "decision_tree": {
+          "accuracy": 79.48,
+          "precision": 15.29,
+          "recall": 77.22,
+          "f1": 25.52,
+          "roc_auc": 83.18,
+          "confusion_matrix": {
+            "tn": 1318,
+            "fp": 338,
+            "fn": 18,
+            "tp": 61
+          }
+        },
+        "logistic_regression": {
+          "accuracy": 72.39,
+          "precision": 10.47,
+          "recall": 67.09,
+          "f1": 18.12,
+          "roc_auc": 77.63,
+          "confusion_matrix": {
+            "tn": 1203,
+            "fp": 453,
+            "fn": 26,
+            "tp": 53
+          }
+        },
+        "random_forest": {
+          "accuracy": 80.35,
+          "precision": 15.53,
+          "recall": 74.68,
+          "f1": 25.71,
+          "roc_auc": 85.76,
+          "confusion_matrix": {
+            "tn": 1335,
+            "fp": 321,
+            "fn": 20,
+            "tp": 59
+          }
+        }
+      },
+      "sample_counts": {
+        "train_samples": 5203,
+        "test_samples": 1735,
+        "cancel_ratio": 4.57
+      }
+    }
+  }
+}

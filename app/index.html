@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RidePredict - Cab Cancellation Prediction & Analytics System</title>
+  <meta name="description" content="AI-Powered Machine Learning system to predict cab booking cancellations and explore transportation patterns with real-time inference and analytics.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js & Leaflet Map CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Top Navigation & Header -->
+    <header class="navbar">
+      <div class="brand-group">
+        <div class="brand-icon">🚕</div>
+        <div class="brand-text">
+          <h1>RidePredict</h1>
+          <p>Cab Cancellation Prediction & Analytics Platform</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="badge">
+          <span class="badge-pulse"></span>
+          <span>Decision Tree ML Active</span>
+        </div>
+        <div class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.25);">
+          <span>Bengaluru Fleet Analytics</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="predictor">🎯 Live Predictor</button>
+      <button class="tab-btn" data-tab="analytics">📊 Analytics & EDA</button>
+      <button class="tab-btn" data-tab="map">🗺️ Hotspot Map</button>
+      <button class="tab-btn" data-tab="docs">📖 Architecture & Docs</button>
+    </nav>
+
+    <!-- ================= TAB 1: LIVE PREDICTOR ================= -->
+    <main id="predictor" class="tab-content active">
+      <div class="grid-2col">
+        <!-- Input Form Section -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title"><span>📋</span> Booking Parameters</h2>
+              <p class="card-desc">Configure trip details to predict cancellation risk in real-time.</p>
+            </div>
+          </div>
+
+          <!-- Travel Type Selection -->
+          <div class="form-section-title">1. Travel Type Classification</div>
+          <div class="travel-type-selector">
+            <label class="type-option">
+              <input type="radio" name="travelType" value="2" checked>
+              <div class="type-card">
+                <span class="icon">📍</span>
+                <span class="label">Point to Point</span>
+                <span class="sub">Intra-City Trips</span>
+              </div>
+            </label>
+            <label class="type-option">
+              <input type="radio" name="travelType" value="1">
+              <div class="type-card">
+                <span class="icon">🛣️</span>
+                <span class="label">Long Distance</span>
+                <span class="sub">Outstation Travel</span>
+              </div>
+            </label>
+            <label class="type-option">
+              <input type="radio" name="travelType" value="3">
+              <div class="type-card">
+                <span class="icon">⏱️</span>
+                <span class="label">Hourly Rental</span>
+                <span class="sub">Flexible Packages</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Locations & Vehicle -->
+          <div class="form-section-title">2. Location & Vehicle Profile</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fromAreaSelect">Pickup Area ID <span class="hint">Location Sector</span></label>
+              <select id="fromAreaSelect"></select>
+            </div>
+
+            <div class="form-group" id="toAreaGroup">
+              <label for="toAreaSelect">Destination Area ID <span class="hint">Drop Sector</span></label>
+              <select id="toAreaSelect"></select>
+            </div>
+
+            <div class="form-group" id="packageGroup" style="display:none;">
+              <label for="packageSelect">Rental Package <span class="hint">Hours & Distance</span></label>
+              <select id="packageSelect"></select>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicleModelSelect">Vehicle Model <span class="hint">Fleet Category</span></label>
+              <select id="vehicleModelSelect">
+                <option value="12">Model #12 (Popular Sedan)</option>
+                <option value="28">Model #28 (Compact / Hatchback)</option>
+                <option value="65">Model #65 (Premium / SUV)</option>
+                <option value="87">Model #87 (Executive)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid" id="cityGroup" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="fromCitySelect">From City</label>
+              <select id="fromCitySelect">
+                <option value="15">City #15 (Bengaluru Hub)</option>
+                <option value="1">City #1 (Satellite Zone)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="toCitySelect">To City</label>
+              <select id="toCitySelect">
+                <option value="32">City #32 (Metro Core)</option>
+                <option value="15">City #15 (Suburbs)</option>
+                <option value="112">City #112 (Outstation)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Timing & Channel -->
+          <div class="form-section-title">3. Schedule & Booking Channel</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="bookingCreatedInput">Booking Creation Timestamp <span class="hint">When booked</span></label>
+              <input type="datetime-local" id="bookingCreatedInput">
+            </div>
+
+            <div class="form-group">
+              <label for="pickupDateInput">Scheduled Pickup Timestamp <span class="hint">Pickup time</span></label>
+              <input type="datetime-local" id="pickupDateInput">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label>Booking Channel</label>
+            <div class="channel-selector">
+              <button type="button" class="channel-btn active" data-channel="desktop">💻 Desktop / Call Center</button>
+              <button type="button" class="channel-btn" data-channel="online">🌐 Online Web</button>
+              <button type="button" class="channel-btn" data-channel="mobile">📱 Mobile Web</button>
+            </div>
+          </div>
+
+          <button type="button" class="btn-primary" onclick="runPrediction()">
+            <span>⚡</span> Compute Cancellation Risk
+          </button>
+        </div>
+
+        <!-- Prediction Result Output Card -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title"><span>🎯</span> Inference Result</h2>
+              <p class="card-desc">Machine Learning risk probability & dispatch insights.</p>
+            </div>
+          </div>
+
+          <div class="prediction-display">
+            <!-- Animated Radial Gauge -->
+            <div class="gauge-container">
+              <svg class="gauge-svg" viewBox="0 0 200 110">
+                <defs>
+                  <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#10b981" />
+                    <stop offset="50%" stop-color="#f59e0b" />
+                    <stop offset="100%" stop-color="#f43f5e" />
+                  </linearGradient>
+                </defs>
+                <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+                <path id="gaugeFill" class="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" />
+              </svg>
+              <div class="gauge-center-text">
+                <div class="gauge-value" id="gaugeValText">0%</div>
+                <div class="gauge-sub">Cancellation Risk</div>
+              </div>
+            </div>
+
+            <div id="resultBadge" class="result-badge safe">
+              <span>🟢</span> Low Cancellation Risk (Completed)
+            </div>
+
+            <p id="resultSummary" class="result-summary-text">
+              Evaluating booking parameters...
+            </p>
+
+            <!-- Feature Contribution Factors -->
+            <div class="factors-container" id="factorsContainer">
+              <!-- Dynamically rendered -->
+            </div>
+
+            <!-- AI Operational Advice -->
+            <div class="advice-box" id="adviceBox">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= TAB 2: ANALYTICS & EDA ================= -->
+    <section id="analytics" class="tab-content">
+      <!-- KPI Metrics Row -->
+      <div class="grid-4col" style="margin-bottom: 1.5rem;">
+        <div class="stat-card">
+          <div class="stat-icon cyan">📊</div>
+          <div class="stat-info">
+            <div class="stat-label">Total Bookings</div>
+            <div class="stat-value" id="kpiTotalBookings">43,431</div>
+            <div class="stat-sub">Historical Rides</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon rose">⚠️</div>
+          <div class="stat-info">
+            <div class="stat-label">Cancellation Rate</div>
+            <div class="stat-value" id="kpiCancelRate">7.21%</div>
+            <div class="stat-sub">Overall Average</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon emerald">✅</div>
+          <div class="stat-info">
+            <div class="stat-label">Completed Rides</div>
+            <div class="stat-value" id="kpiCompleted">40,299</div>
+            <div class="stat-sub">Fulfilled Trips</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon amber">❌</div>
+          <div class="stat-info">
+            <div class="stat-label">Cancelled Rides</div>
+            <div class="stat-value" id="kpiCancelled">3,132</div>
+            <div class="stat-sub">Lost Bookings</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Grid 1 -->
+      <div class="grid-3col" style="margin-bottom: 1.5rem;">
+        <div class="card chart-card">
+          <h3 class="card-title"><span>🥧</span> Booking Distribution</h3>
+          <p class="card-desc">Completed vs Cancelled ratio</p>
+          <div class="chart-wrapper">
+            <canvas id="chartDistribution"></canvas>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <h3 class="card-title"><span>🛣️</span> Risk by Travel Type</h3>
+          <p class="card-desc">Point-to-Point vs Outstation vs Hourly</p>
+          <div class="chart-wrapper">
+            <canvas id="chartTravelType"></canvas>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <h3 class="card-title"><span>📱</span> Channel Risk Analysis</h3>
+          <p class="card-desc">Mobile site vs Online vs Desktop</p>
+          <div class="chart-wrapper">
+            <canvas id="chartChannel"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Grid 2 -->
+      <div class="grid-3col">
+        <div class="card chart-card" style="grid-column: span 2;">
+          <h3 class="card-title"><span>⏰</span> Hourly Cancellation Rate & Volume</h3>
+          <p class="card-desc">Peak cancellation risk hours throughout the 24-hour cycle</p>
+          <div class="chart-wrapper">
+            <canvas id="chartHourly"></canvas>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <h3 class="card-title"><span>📅</span> Day of Week Patterns</h3>
+          <p class="card-desc">Weekday vs Weekend cancellation behavior</p>
+          <div class="chart-wrapper">
+            <canvas id="chartDay"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead Time Chart Row -->
+      <div class="card chart-card" style="margin-top: 1.5rem;">
+        <h3 class="card-title"><span>⏳</span> Lead Time (Advance Booking Hours) vs Cancellation Probability</h3>
+        <p class="card-desc">Quantifies how last-minute bookings drastically increase cancellation likelihood</p>
+        <div class="chart-wrapper" style="min-height: 260px;">
+          <canvas id="chartLeadTime"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 3: HOTSPOT MAP ================= -->
+    <section id="map" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title"><span>🗺️</span> Bengaluru Cancellation Geospatial Hotspots</h2>
+            <p class="card-desc">Interactive coordinate map showing pickup hotspots and cancellation density across Bengaluru sectors.</p>
+          </div>
+          <div class="nav-tabs" style="margin-bottom: 0; padding: 0.2rem;">
+            <button class="tab-btn map-filter-btn active" data-filter="all" style="padding: 0.35rem 0.75rem; min-width: 80px; font-size: 0.75rem;">All Areas</button>
+            <button class="tab-btn map-filter-btn" data-filter="high" style="padding: 0.35rem 0.75rem; min-width: 80px; font-size: 0.75rem; color: var(--accent-rose);">High Risk (≥12%)</button>
+            <button class="tab-btn map-filter-btn" data-filter="low" style="padding: 0.35rem 0.75rem; min-width: 80px; font-size: 0.75rem; color: var(--accent-emerald);">Stable (<6%)</button>
+          </div>
+        </div>
+
+        <div id="mapContainer"></div>
+
+        <div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-secondary);">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #f43f5e;"></span>
+            <span>High Cancellation Hotspot (≥ 12% cancel rate)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
+            <span>Medium Risk Sector (6% - 12%)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></span>
+            <span>Low Risk / Stable Zone (&lt; 6%)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 6: DOCS & ARCHITECTURE ================= -->
+    <section id="docs" class="tab-content">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2 class="card-title"><span>📖</span> RidePredict System Architecture & Machine Learning Pipeline</h2>
+        <p class="card-desc">End-to-end overview of the data engineering, training methodology, and inference engine.</p>
+        
+        <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
+          <div>
+            <h3 style="color: var(--accent-amber); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Problem Definition & Objectives</h3>
+            <p>
+              In on-demand transportation and cab booking ecosystems, ride cancellations lead to driver downtime, customer dissatisfaction, and revenue loss. <b>RidePredict</b> creates an intelligent binary classification system to accurately predict whether an upcoming booking is likely to be <b>Completed (0)</b> or <b>Cancelled (1)</b> prior to dispatch.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Feature Engineering & Preprocessing Pipeline</h3>
+            <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li><b>Time Difference (<code style="color:var(--accent-amber);">time_diff</code>):</b> Exact lead time between booking creation and scheduled pickup in hours.</li>
+              <li><b>Booking Nature (<code style="color:var(--accent-amber);">booking_nature</code>):</b> Segmented into Immediate (&le; 4h = 0), Same/Next Day (&le; 24h = 1), and Advance (> 24h = 2).</li>
+              <li><b>Area Cancellation Volume:</b> Historical cancellation rate per pickup area categorized into Zero (0), Low (1), Medium (2), and High (3).</li>
+              <li><b>Vehicle Model Identifier (<code style="color:var(--accent-amber);">is_VMID_12</code>):</b> Binary flag for the most dominant vehicle category #12.</li>
+              <li><b>Temporal Features:</b> Pickup Month, Day of Week, and Weekend indicator (<code style="color:var(--accent-amber);">is_weekend</code>).</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="color: var(--accent-emerald); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Specialized Model Training per Travel Type</h3>
+            <p>
+              Because operational behaviors differ fundamentally between ride types, 3 distinct Decision Tree models are trained:
+            </p>
+            <div class="grid-3col" style="margin-top: 0.75rem;">
+              <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <b style="color:#fff;">1. Long Distance / Outstation</b>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:4px;">11 features. Low cancellation rate (~1.4%), characterized by high advance planning.</p>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <b style="color:#fff;">2. Point to Point (Intra-city)</b>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:4px;">12 features. Primary volume (~29.6k rides) with an 8.3% cancellation rate influenced heavily by lead time and pickup zone.</p>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <b style="color:#fff;">3. Hourly Rental</b>
+                <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:4px;">9 features. Governed by package duration (hours/km) and booking lead times (~4.5% cancellation).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Navigation Tab Switching Logic Script -->
+  <script>
+    document.querySelectorAll('.tab-btn[data-tab]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.tab-btn[data-tab]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+
+        const targetTab = e.currentTarget.dataset.tab;
+        e.currentTarget.classList.add('active');
+        const content = document.getElementById(targetTab);
+        if (content) content.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/predictor.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/map.js"></script>
+
+</body>
+</html>
