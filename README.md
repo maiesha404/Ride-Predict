@@ -115,27 +115,9 @@ These metrics help determine how effectively RidePredict identifies cancelled bo
 
 ---
 
-## 🔮 Future Scope
-
-RidePredict can be further improved by:
-
-* Comparing multiple Machine Learning models.
-* Applying hyperparameter tuning.
-* Predicting cancellation probability.
-* Adding feature importance and explainable predictions.
-* Developing an interactive web interface for real-time predictions.
-
----
-
 ## 📌 Project Type
 
 **Domain:** Transportation & Data Analytics
 **Problem Type:** Binary Classification
 **Primary Model:** Decision Tree Classifier
 **Language:** Python
-
----
-
-### 👩‍💻 Conclusion
-
-RidePredict demonstrates how Machine Learning can be used to analyze transportation data and predict cab cancellation behavior. The project provides an end-to-end workflow from **raw data to prediction and evaluation**.
