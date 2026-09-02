@@ -7,7 +7,7 @@ The project combines **Data Preprocessing, Exploratory Data Analysis (EDA), Feat
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 * Analyze historical cab booking data.
 * Understand the major factors responsible for cancellations.
@@ -19,7 +19,7 @@ The project combines **Data Preprocessing, Exploratory Data Analysis (EDA), Feat
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ```text
 Cab Booking Dataset
@@ -41,7 +41,7 @@ Cancellation Prediction
 
 ---
 
-## 📊 Exploratory Data Analysis
+## Exploratory Data Analysis
 
 EDA is performed to understand the dataset and discover relationships between different variables and cab cancellations.
 
@@ -58,7 +58,7 @@ Visualizations are created using **Matplotlib and Seaborn**.
 
 ---
 
-## ⚙️ Feature Engineering
+## Feature Engineering
 
 Relevant features are created or transformed to improve the model's ability to identify cancellation patterns.
 
@@ -89,7 +89,7 @@ The dataset is divided into training and testing sets to evaluate how well the m
 
 ---
 
-## 📈 Model Evaluation
+## Model Evaluation
 
 The model is evaluated using classification metrics such as:
 
@@ -103,7 +103,7 @@ These metrics help determine how effectively RidePredict identifies cancelled bo
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * **Python**
 * **Pandas** – Data manipulation
@@ -115,7 +115,7 @@ These metrics help determine how effectively RidePredict identifies cancelled bo
 
 ---
 
-## 📌 Project Type
+## Project Type
 
 **Domain:** Transportation & Data Analytics
 **Problem Type:** Binary Classification
